@@ -22,11 +22,7 @@
     <link rel="stylesheet" href="css/thalorim.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-	<div>
-	<div id="Home" style="position: fixed; top:0; left:0;">
-	<a href="https://streamhub.life/"><img src="images/home.png" width="60" height="60" title="Домой" border="0" align="left"></a>
-	</div>
-
+	
     <script>
         document.onkeydown = function(e) {
             if (e.ctrlKey &&
@@ -120,6 +116,28 @@ Your browser does not support the video tag. I suggest you upgrade your browser.
             </div>
 		</main>
 	</div>
+	
+  <div id="sidebar">
+    <div class="toggle-btn" onclick="openMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li>Site Menu</li>
+      <li><a href="https://streamhub.life">Main</a></li>
+      <li><a href="https://streamhub.life/2Pe4enka%20Page/pechenka.html">Pe4enka</a></li>
+      <li><a href="https://streamhub.life/1DA_YAR%20Page/dayar.html">DA_YAR</a></li>
+    </ul>
+  </div>
+
+
+<script>
+  function openMenu() {
+    document.getElementById("sidebar").classList.toggle('active');
+  }
+</script>
+	
 </body>
 </html>
 
