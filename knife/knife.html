@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2022 by Vekdrop (http://jsbin.com/gilusiw/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+    </head>
+
+    <body>
+
+        <h2>Item settings</h2>
+    
+        <p>
+            <label for="name">Your name</label>
+            <input id="name" type="text" value="Player">
+
+        </p>
+
+        <p>
+            <label for="item">Item</label>
+            <input id="item" type="text" value="Karambit">
+            
+        </p>
+
+        <p>
+            <input id="starred" type="checkbox" value="Player" checked>
+            <label for="starred">Knife or gloves?</label>
+            
+        </p>
+
+        <p>
+            <label for="paintkit">Paint kit</label>
+            <input id="paintkit" type="text" value="Lore">
+            
+        </p>
+
+        <p>
+            <input id="stattrak" type="checkbox" value="Player" checked>
+            <label for="stattrak">StatTrack&trade;?</label>
+            
+        </p>
+
+        <p>
+            <label for="rarity">Rarity</label>
+
+            <select id="rarity">
+
+                <option value="0x0F" selected>Covert (red)</option>
+                <option value="0x0E">Classified (pink)</option>
+                <option value="0x0C">Mil-Spec (blue)</option>
+
+            </select>
+            
+        </p>
+
+        <input id="dummyinput" style="position:absolute;left:-100%" type="text">
+        <button onclick="copy()">Copy command</button>
+
+        <script>
+
+            var copy = () =>
+            {
+                let name = document.getElementById("name").value;
+                let item = document.getElementById("item").value;
+                let starred = document.getElementById("starred").checked ? "★" : "";
+                let paintkit = document.getElementById("paintkit").value;
+                let stattrak = document.getElementById("stattrak").checked ? " StatTrak™" : "";
+                let rarity = String.fromCharCode(eval(document.getElementById("rarity").value));
+
+                let input = document.getElementById("dummyinput");
+                input.value = `playerradio Radio.WePlanted "\u2028\x03\x03${name} \x01has opened a container and found: ${rarity}${starred}${stattrak} ${item} | ${paintkit}"`;
+                input.select();
+                input.setSelectionRange(0, input.value.length)
+                document.execCommand("copy");
+            };
+
+        </script>
+
+    </body>
+
+</html>
